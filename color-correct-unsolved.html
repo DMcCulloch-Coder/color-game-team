@@ -80,8 +80,9 @@
         // Set random word color
         targetColorOfText = colors[Math.floor(Math.random() * colors.length)];
 
-        console.log(targetColor); //test
-        console.log(targetColorOfText); //test
+        let createColor = $('#rand-target-color').append($('<p>'))
+        createColor.text(targetColor);
+        createColor.css('color', targetColorOfText);
 
       }
 
@@ -100,8 +101,11 @@
 
 
         // Loop through all colors in the array
+
         // Create element to hold word
+
         // Output a word
+
         // Make word a random color
 
       }
