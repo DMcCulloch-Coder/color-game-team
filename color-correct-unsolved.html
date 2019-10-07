@@ -117,11 +117,14 @@
 
       // Clear the divs and arrays upon each round.
       function clear() {
-
+        $('#rand-target-color').remove('p')
+        $('#color-picker').remove('li')
       }
 
       // Function for resetting colors and setting new colors.
       function reset() {
+        randColor();
+        createColorPicker();
 
       }
 
@@ -134,8 +137,8 @@
       // Run game
 
       randColor();
-
-      //reset();
+      createColorPicker();
+      reset();
     });
 
   </script>
