@@ -76,12 +76,11 @@
 
         // Set random word
         targetColor = colors[Math.floor(Math.random() * colors.length)];
-
         // Set random word color
         targetColorOfText = colors[Math.floor(Math.random() * colors.length)];
-
-        console.log(targetColor); //test
-        console.log(targetColorOfText); //test
+        let createColor = $('#rand-target-color').append($('<p>'))
+        createColor.text(targetColor);
+        createColor.css('color', targetColorOfText);
 
       }
 
@@ -89,20 +88,27 @@
       function createColorPicker() {
 
         // Shuffle color array
-
+        shuffle(targetColor);
 
 
         // Push to text color array
 
-
+        colorsOfText.push(targetColor);
 
         // Shuffle text color array
-
+        shuffle(targetColorOfText);
 
         // Loop through all colors in the array
         // Create element to hold word
         // Output a word
         // Make word a random color
+
+        for (i = 0; i < colorsOfText.length; i++){
+          let listWord = $(`<li>`);
+          listWord.text(targetColor[i]);
+          listWord.css('color', targetColorOfText[i]);
+          (".list-unstyled").append(listWord);
+        }
 
       }
 
