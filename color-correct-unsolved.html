@@ -113,6 +113,9 @@
         // Output a word
         // Make word a random color
 
+        console.log(colors)
+        console.log(colorsOfText)
+
         for (i = 0; i < colorsOfText.length; i++){
           let listWord = $(`<li>`);
           $(listWord).attr("id", colors[i]).text(colors[i]);
@@ -124,12 +127,14 @@
 
       // Clear the divs and arrays upon each round.
       function clear() {
-        $('#rand-target-color').remove('p')
-        $('#color-picker').remove('li')
+        $("#rand-target-color").empty();
+        $("#color-picker").empty();
+        colorsOfText = [];
       }
 
       // Function for resetting colors and setting new colors.
       function reset() {
+        clear();
         randColor();
         createColorPicker();
 
@@ -137,21 +142,22 @@
 
       // Get id of element clicked by user
       $("#color-picker").click(function(event) {
-        let compare = event.target.id;
-        console.log(compare);
-        if (targetColorOfText == compare){
-          alert("Yay! You won");
-        }else{
-          alert("Nope! Try again");
-        }
+        let userAnswer = event.target.id
 
+        if (userAnswer === targetColorOfText) {
+          alert('You Win!')
+          reset();
+        } else {
+          alert('You Lose!');
+          reset();
+        }
+        
       });
 
       // Run game
 
-      randColor();
-      createColorPicker();
-      //reset();
+      reset();
+
     });
 
   </script>
