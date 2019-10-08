@@ -115,8 +115,8 @@
 
         for (i = 0; i < colorsOfText.length; i++){
           let listWord = $(`<li>`);
-          listWord.text(colors[i]);
-          listWord.css('color', colorsOfText[i]);
+          $(listWord).attr("id", colors[i]).text(colors[i]);
+          $(listWord).css('color', colorsOfText[i]);
           $(".list-unstyled").append(listWord);
         }
 
@@ -137,7 +137,13 @@
 
       // Get id of element clicked by user
       $("#color-picker").click(function(event) {
-        
+        let compare = event.target.id;
+        console.log(compare);
+        if (targetColorOfText == compare){
+          alert("Yay! You won");
+        }else{
+          alert("Nope! Try again");
+        }
 
       });
 
