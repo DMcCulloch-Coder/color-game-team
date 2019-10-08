@@ -100,8 +100,10 @@
 
         shuffle(colors);
         // Push to text color array
-        
-        colorsOfText.push(colors);
+
+        for(i = 0; i <colors.length; i++){
+          colorsOfText.push(colors[i]);
+        }
 
         // Shuffle text color array
         shuffle(colorsOfText);
@@ -125,28 +127,29 @@
 
       // Clear the divs and arrays upon each round.
       function clear() {
-        $('#rand-target-color').remove('p')
-        $('#color-picker').remove('li')
+        $("#rand-target-color").empty();
+        $("#color-picker").empty();
+        colorsOfText = [];
       }
 
       // Function for resetting colors and setting new colors.
       function reset() {
+        clear();
         randColor();
         createColorPicker();
 
       }
 
       // Get id of element clicked by user
-      $("#color-picker").click(function(event) {
+      $("#color-picker, li").click(function(event) {
         //if(targetColorOfText === this.css('color'))
         console.log(this)
       });
 
       // Run game
 
-      randColor();
-      createColorPicker();
-      //reset();
+      reset();
+      
     });
 
   </script>
