@@ -100,7 +100,7 @@
 
         shuffle(colors);
         // Push to text color array
-
+        
         colorsOfText.push(colors);
 
         // Shuffle text color array
@@ -110,6 +110,9 @@
         // Create element to hold word
         // Output a word
         // Make word a random color
+
+        console.log(colors)
+        console.log(colorsOfText)
 
         for (i = 0; i < colorsOfText.length; i++){
           let listWord = $(`<li>`);
@@ -135,8 +138,8 @@
 
       // Get id of element clicked by user
       $("#color-picker").click(function(event) {
-        
-
+        //if(targetColorOfText === this.css('color'))
+        console.log(this)
       });
 
       // Run game
