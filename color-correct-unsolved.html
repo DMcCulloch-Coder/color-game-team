@@ -91,14 +91,13 @@
 
         // Shuffle color array
 
-
-
+        shuffle(colors);
         // Push to text color array
 
-
+        colorsOfText.push(colors);
 
         // Shuffle text color array
-
+        shuffle(colorsOfText);
 
         // Loop through all colors in the array
         // Create element to hold word
@@ -107,8 +106,8 @@
 
         for (i = 0; i < colorsOfText.length; i++){
           let listWord = $(`<li>`);
-          listWord.text(targetColor[i]);
-          listWord.css('color', targetColorOfText[i]);
+          listWord.text(colors[i]);
+          listWord.css('color', colorsOfText[i]);
           $(".list-unstyled").append(listWord);
         }
 
