@@ -142,14 +142,22 @@
 
       // Get id of element clicked by user
       $("#color-picker, li").click(function(event) {
-        //if(targetColorOfText === this.css('color'))
-        console.log(this)
+        let userAnswer = event.target.id
+
+        if (userAnswer === targetColorOfText) {
+          alert('You Win!')
+          reset();
+        } else {
+          alert('You Lose!');
+          reset();
+        }
+        
       });
 
       // Run game
 
       reset();
-      
+
     });
 
   </script>
